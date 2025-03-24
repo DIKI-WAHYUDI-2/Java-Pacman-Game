@@ -13,7 +13,7 @@ public class BoardTest {
     }
 
     @Test
-    void testMovePacman() {
+    void testMovePacmanRight() {
         // Simulasi pergerakan Pacman ke kanan
         board.req_dx = 1;
         board.req_dy = 0;
@@ -21,6 +21,18 @@ public class BoardTest {
 
         // Pastikan Pacman bergerak ke kanan
         assertEquals(1, board.pacmand_x);
+        assertEquals(0, board.pacmand_y);
+    }
+
+    @Test
+    void testMovePacmanLeft() {
+        // Simulasi pergerakan Pacman ke kiri
+        board.req_dx = -1;
+        board.req_dy = 0;
+        board.movePacman();
+
+        // Pastikan Pacman bergerak ke kiri
+        assertEquals(-1, board.pacmand_x);
         assertEquals(0, board.pacmand_y);
     }
 }
